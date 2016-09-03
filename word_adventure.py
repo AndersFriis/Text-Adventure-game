@@ -1,18 +1,47 @@
-name = input('What is your name?\n')
-print ('Get ready to play, %s.' % name)
+import random
 
-class Character:
-	def __init__(self, name, health):
+name = input('What is your name?\n')
+
+print ('Hello, %s. lets play' % name)
+
+
+
+class Player:
+	def __init__(self, name):
   		self.name = ""
-  		self.health = health
+  		self.health = 15
+  		
+	def attack_enemy (self, attack_enemy):
+		dmg=random.randint(0,3)
+		enemy.health -=dmg
+		print("Player did {} damage".format(dmg))
+		if enemy.health <= 0: 
+			print("You killed the enemy")
+
+
+class Enemy:
+	def __init__(self, name):
+		self.name = name
+		self.health = 9
+
+	
+	def attack_player(self, player):
+		dmg=random.randint(0,3)
+		player.health -=dmg
+		print("enemy did {} damage".format(dmg))
+		if player.health <= 0:
+			print ("You Died, GameOver")    
+
+
+
 
 
 class Room:
 	def __init__(self):
 		self.doors = 3
-		self.right = "right"
-		self.left = "left"
-		self. straight = "straight"
+		self.right = "R"
+		self.left = "L"
+		self. straight = "S"
 
 class Puzzle:
 	def __init__(self, puzzle1, puzzle2, puzzle3):
@@ -21,16 +50,7 @@ class Puzzle:
 		self.puzzle3
 
 
-class Enemy:
-    def __init__(self, name, health, damage):
-        self.name = name
-        self.health = health
-        self.damage = damage
-        self. enemy
- 
-    def is_alive(self):
-        return self.health > 0
-
+       
 
 
 def puzzle1():
@@ -45,8 +65,8 @@ def puzzle1():
 ## Note to self, do not put anythin else under else statement with puzzle1()
 def puzzle2():
 	
-	puzzle_answer = input (" Cry Baby that plays for Real Madrid?")
-	if puzzle_answer == "Ronaldo":
+	puzzle_answer = input (" What has a head and a tail, but no body?")
+	if puzzle_answer == "A coin":
 			print ("The door opens and you step into a new room")
 	else: 
 		print ("The answer is not correct, try again")
@@ -61,10 +81,11 @@ def puzzle2():
 Start = Room
 print (" You just woke up and find yourself in a dark house. All the windows are blocked and sealed. There are 3 doors in the room.")
 
+player = Player(name)	
+enemy = Enemy(name)
 
 
-
-answer = input ("What door will you Pick? Right, Left or Straight?")
+answer = input ("What door will you Pick? Right = R, Left = L or Straight = S?")
 
 
 if Room().right == answer:
@@ -77,11 +98,43 @@ if Room().left == answer:
     puzzle2()
 
 else:
-	print ("You are facing a ghost enemy")
+	print ("You are facing an enemy")
+	while player.health > 0 or enemy.health > 0:
+		player.attack_enemy(enemy)		
+		enemy.attack_player(player)
 
-def enemy ()
 
-	enemy = 
+			
+		
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+			
+	
+
+
+		
+
+
+
+
+
+
+
+
 
 
 
