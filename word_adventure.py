@@ -47,21 +47,66 @@ class Room:
 
 
 class Puzzle:
-    def __init__(self, puzzle1, puzzle2, puzzle3, puzzle4, puzzle5):
-        self.puzzle1
-        self.puzzle2
-        self.puzzle3
-        self.puzzle4
-        self.puzzle5
-        self.puzzle6
-        self.puzzle7 
+    def __init__(self, ):
+        self.quiz = {
+    "1" : {
+        "question": "The peanut is a type of nut.",
+        "answer": false
+    },
+
+    "2" : {
+        "question": "To tell someone to \"break a leg\" is a way to wish them good luck.",
+        "answer": true
+    },
+
+    "3" : {
+        "question": "The control ropes to position sails on a ship are called masts.",
+        "answer": false
+    },
+
+    "4" : {
+        "question": "Agoraphobia is the fear of spiders.",
+        "answer": false
+    },
+
+    "5" : {
+        "question": "Audiences in ancient Greece would slap their thighs instead of clapping to show their appreciation for a performance.",
+        "answer": false
+    },
+
+    "6" : {
+        "question": "The average flight altitude of a commercial aircraft is 30,000 feet.",
+        "answer": true
+    },
+
+    "7" : {
+        "question": "John Glenn became the first American to orbit the Earth in 1962.",
+        "answer": true
+    },
+
+    "8" : {
+        "question": "New York City is nicknamed \"Sin City\".",
+        "answer": false
+    },
+
+    "9" : {
+        "question": "Ambidextrous means being able to do something equally well with both hands.",
+        "answer": true
+    },
+
+    "10" : {
+        "question": "Pablo Picasso piloted the first powered airplane with a flight of 120 feet lasting 12 seconds in Kitty Hawk, North Carolina.",
+        "answer": false
+    }
+
+} 
         
         
 
 def puzzle1():
 	
-	puzzle_answer = input (" What was the heighest mountain in the world before MT Everest was discovered?")
-	if puzzle_answer == "mt everest":
+	puzzle_answer = input (self.quiz["1"]["question"])
+	if puzzle_answer == self.quiz["1"]["answer"]
 		print ("The door opens and you step into a new room, Hint: Mt ")
 	else: 
 		print ("The answer is not correct, try again")
